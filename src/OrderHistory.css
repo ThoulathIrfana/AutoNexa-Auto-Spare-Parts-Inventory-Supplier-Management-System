@@ -1,0 +1,71 @@
+.order-history-container {
+  padding: 30px;
+  background: #f4f6fa;
+  min-height: 100vh;
+}
+
+.order-history-container h1 {
+  color: #232f3e;
+  margin-bottom: 20px;
+}
+
+/* TABLE WRAPPER */
+.order-table-wrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+/* TABLE */
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table thead {
+  background: #232f3e;
+  color: #ffffff;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ROW COLORS */
+.order-table tr:nth-child(even) {
+  background: #f7f9fc;
+}
+
+/* STATUS STYLES */
+.status-pending {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.status-approved {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* EMPTY STATE */
+.empty-orders {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  color: #777;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .order-table th,
+  .order-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

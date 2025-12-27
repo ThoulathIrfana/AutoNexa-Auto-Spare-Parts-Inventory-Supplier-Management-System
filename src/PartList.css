@@ -1,0 +1,120 @@
+.part-list-container {
+  padding: 20px 40px;
+   background: whitesmoke; 
+}
+
+/* HERO */
+.hero-section {
+  width: 100%;
+  min-height: 500px;              /* adjust height if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  margin-bottom: 30px;
+  /* ✅ BACKGROUND IMAGE */
+  background-image: url("./assets/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  border-radius: 14px;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 14px;
+  z-index: 0;
+}
+
+/* TEXT ABOVE OVERLAY */
+.hero-section h1,
+.hero-section p {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.hero-section h1 {
+  font-size: 45px;
+}
+
+.hero-section p {
+  margin-top: 6px;
+  opacity: 0.95;
+}
+
+/* GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px; /* SPACE BETWEEN TOP & BOTTOM PRODUCTS */
+}
+
+/* CARD */
+.product-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.06);
+}
+
+.product-name {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.product-category,
+.product-supplier {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* BUTTONS */
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.btn.small {
+  padding: 6px 14px; /* SMALL BUTTON */
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.small.cart {
+  background: #ff9900;
+  color: #fff;
+}
+
+.btn.small:not(.cart) {
+  background: #232f3e;
+  color: #fff;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0 30px;
+  justify-content: center;
+}
+
+.filter-bar select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
