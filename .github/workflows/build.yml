@@ -31,21 +31,21 @@ jobs:
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
           -Dsonar.projectKey=iamneo-production-4_f7f134a1-d4f2-431e-8357-352c94403a5c-bc7eefc4-3f7d-4bb2-919f-43d80bc1ce31
           -Dsonar.login=sqa_bca47d55147cb1b256a213a17c135dfe863be411
-      - name: Trigger API
-        if: always()
-        env:
-          API_URL: '${{ secrets.API_URL }}'
-          API_SECRET: '${{ secrets.API_SECRET }}'
-        run: >
-          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f 2)
+      # - name: Trigger API
+      #   if: always()
+      #   env:
+      #     API_URL: '${{ secrets.API_URL }}'
+      #     API_SECRET: '${{ secrets.API_SECRET }}'
+      #   run: >
+      #     REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f 2)
 
-          ORG_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f 1)
+      #     ORG_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f 1)
 
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+      #     BRANCH_NAME=${GITHUB_REF#refs/heads/}
 
-          API_PAYLOAD="{ \"repo_id\": \"$REPO_NAME\", \"branch_name\":
-          \"$BRANCH_NAME\", \"api_secret\": \"$API_SECRET\", \"org_name\":
-          \"$ORG_NAME\" }"
+      #     API_PAYLOAD="{ \"repo_id\": \"$REPO_NAME\", \"branch_name\":
+      #     \"$BRANCH_NAME\", \"api_secret\": \"$API_SECRET\", \"org_name\":
+      #     \"$ORG_NAME\" }"
 
-          curl -X POST -H "Content-Type: application/json" -d "$API_PAYLOAD"
-          $API_URL
+      #     curl -X POST -H "Content-Type: application/json" -d "$API_PAYLOAD"
+      #     $API_URL
